@@ -16,7 +16,7 @@ export const client = prismic.createClient(repositoryName, {
   routes: [
     {
       type: 'blog_post',
-      path: '/(tabs)',
+      path: '/',
     },
   ],
 })
