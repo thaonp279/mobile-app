@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 export const GlobalStyle = StyleSheet.create({
   regularFont: {
-    fontFamily: "Georgia",
+    fontFamily: 'Montserrat_400Regular',
   },
   page: {
     backgroundColor: "white",
@@ -20,3 +20,21 @@ export const GlobalStyle = StyleSheet.create({
     objectFit: "contain",
   },
 });
+
+export const GlobalText = StyleSheet.create({
+  tiny: {
+    fontFamily: 'Montserrat_400Regular',
+    fontSize: 11
+  },
+  regular : {
+    fontFamily: 'Montserrat_400Regular',
+    fontSize: 13,
+  },
+  bold: {
+    fontFamily: 'Montserrat_700Bold'
+  },
+  h3: {
+    fontSize: 30,
+    fontFamily: "CrimsonPro_200ExtraLight",
+  }
+})

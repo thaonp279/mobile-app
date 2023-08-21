@@ -1,3 +1,12 @@
+import {
+  CrimsonPro_200ExtraLight,
+  CrimsonPro_300Light,
+  CrimsonPro_400Regular,
+} from "@expo-google-fonts/crimson-pro";
+import {
+  Montserrat_400Regular,
+  Montserrat_700Bold,
+} from "@expo-google-fonts/montserrat";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { PrismicProvider } from "@prismicio/react";
 import {
@@ -10,13 +19,9 @@ import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
 import "react-native-url-polyfill/auto";
-import { client } from "../prismic";
 import { Logo } from "../components/app/Logo";
-
-export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
-} from "expo-router";
+import { client } from "../prismic";
+export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
@@ -29,6 +34,11 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    Montserrat_400Regular,
+    Montserrat_700Bold,
+    CrimsonPro_300Light,
+    CrimsonPro_400Regular,
+    CrimsonPro_200ExtraLight,
     ...FontAwesome.font,
   });
 
@@ -62,10 +72,10 @@ function RootLayoutNav() {
       <Stack
         screenOptions={{
           headerStyle: { backgroundColor: "white" },
-          headerBackTitle: '',
+          headerBackTitle: "",
           headerTitle: (props) => <Logo />,
           headerBackTitleVisible: false,
-          headerTintColor: 'black',
+          headerTintColor: "grey",
         }}
       ></Stack>
     </ThemeProvider>

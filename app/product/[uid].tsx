@@ -20,19 +20,21 @@ export default function ProductPage() {
   const { uid } = useLocalSearchParams();
   const [document, { state }] = usePrismicDocumentByUID(
     "product",
-    uid as string,
+    uid as string
   );
 
   if (state === "loading") {
     return <Skeleton />;
   }
-  console.log(document?.data)
 
   return (
-    <ScrollView style={{ ...GlobalStyle.page, ...GlobalStyle.regularFont }}>
+    <ScrollView
+      contentContainerStyle={{ ...GlobalStyle.page }}
+      style={{ backgroundColor: "white", ...GlobalStyle.regularFont }}
+    >
       <RichImage field={document?.data.product_image} style={styles.image} />
       <RichText field={document?.data.product_name} />
-      <Text>{document?.data.price}</Text>
+      <Text>{document?.data.price}€</Text>
       <RichText field={document?.data.product_description} />
     </ScrollView>
   );

@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
 
 export default function Home() {
   return (
-    <ScrollView>
-      <View style={[GlobalStyle.page, styles.container]}>
+    <ScrollView contentContainerStyle={GlobalStyle.page} style={{backgroundColor: 'white'}}>
+      <View style={styles.container}>
         <BlogCarousel />
         <ProductCarousel />
       </View>

@@ -28,7 +28,7 @@ export default function BlogPost() {
   }
 
   return (
-    <ScrollView style={{ ...GlobalStyle.page, ...GlobalStyle.regularFont }}>
+    <ScrollView contentContainerStyle={{ ...GlobalStyle.page }} style={{backgroundColor: 'white'}}>
       <RichImage field={document?.data.blog_image} style={styles.image} />
       <RichText field={document?.data.blog_title} />
       <RichText field={document?.data.estimated_time} />
