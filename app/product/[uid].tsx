@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     objectFit: "cover",
     borderRadius: 10,
   },
-  button: { backgroundColor: "#ba9c8e", borderRadius: 20, padding: 10 },
+  button: { backgroundColor: "#ba9c8e", borderRadius: 20, padding: 10, marginTop: 10, marginBottom: 10 },
   buttonText: {
     textAlign: "center",
     color: "white",
@@ -39,7 +39,7 @@ export default function ProductPage() {
     >
       <RichImage field={document?.data.product_image} style={styles.image} />
       <RichText field={document?.data.product_name} />
-      <Text>{document?.data.price}€</Text>
+      <Text style={{fontFamily: 'Montserrat_400Regular'}}>{document?.data.price}€</Text>
       {document?.data.shop_url.url && (
         <Link href={document?.data.shop_url.url} asChild>
           <Pressable style={styles.button}>

@@ -9,6 +9,7 @@ export function RichText(props: { field: prismic.RichTextField } & TextProps) {
   return (
     <PrismicRichText
       field={field}
+      // render prismic rich text as React Native Text component
       components={{
         // TODO: add the remaining items: list, listItem, etc.
         heading1: ({ children }) => (
@@ -22,7 +23,15 @@ export function RichText(props: { field: prismic.RichTextField } & TextProps) {
           </Text>
         ),
         heading3: ({ children }) => (
-          <Text {...rest} h3 style={{ fontFamily: "CrimsonPro_200ExtraLight" }}>
+          <Text
+            {...rest}
+            h3
+            style={{
+              fontFamily: "CrimsonPro_200ExtraLight",
+              marginBottom: 5,
+              marginTop: 5,
+            }}
+          >
             {children}
           </Text>
         ),
@@ -32,12 +41,24 @@ export function RichText(props: { field: prismic.RichTextField } & TextProps) {
           </Text>
         ),
         strong: ({ children }) => (
-          <Text style={{ fontWeight: "bold" }}>{children}</Text>
+          <Text
+            style={{
+              fontFamily: "Montserrat_700Bold",
+              fontSize: 13,
+              lineHeight: 20,
+            }}
+          >
+            {children}
+          </Text>
         ),
         paragraph: ({ children }) => (
           <Text
             {...rest}
-            style={{ fontFamily: "Montserrat_400Regular", fontSize: 13 }}
+            style={{
+              fontFamily: "Montserrat_400Regular",
+              fontSize: 13,
+              lineHeight: 20,
+            }}
           >
             {children}
           </Text>

@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 20,
     padding: 3,
+    paddingTop: 10
   },
   h3: {
     fontSize: 30,

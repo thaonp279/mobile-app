@@ -1,8 +1,7 @@
 import { usePrismicDocumentByUID } from "@prismicio/react";
 import { Skeleton } from "@rneui/base";
 import { useLocalSearchParams } from "expo-router";
-import { StyleSheet } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { RichImage } from "../../components/basic/RichImage";
 import { RichText } from "../../components/basic/RichText";
 
@@ -32,7 +31,9 @@ export default function BlogPost() {
     >
       <RichImage field={document?.data.blog_image} style={styles.image} />
       <RichText field={document?.data.blog_title} />
-      <RichText field={document?.data.estimated_time} />
+      <View style={{ marginBottom: 25 }}>
+        <RichText field={document?.data.estimated_time} />
+      </View>
       <RichText field={document?.data.blog_content} />
     </ScrollView>
   );
