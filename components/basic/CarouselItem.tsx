@@ -7,7 +7,7 @@ export type CarouselItemProps = {
     cardType: string;
     imageUrl: string;
     title: string;
-    reasons: string[];
+    reasons: string;
     cta: string;
     path: Href<any>;
     uid: string;
@@ -34,7 +34,7 @@ export const CarouselItem: FunctionComponent<CarouselItemProps> = ({
                     <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                         Shown to you because of:
                     </Text>
-                    {reasons.map((item) => <Text style={{ fontSize: 12 }} key={item}>{`\u2022 ${item}`}</Text>)}
+                    <Text style={{ fontSize: 12 }}>{`\u2022 ${reasons}`}</Text>
                 </View>
                 <Link
                     href={{

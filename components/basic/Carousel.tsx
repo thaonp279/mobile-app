@@ -1,11 +1,16 @@
 import { FunctionComponent } from "react";
+import { FlatList, StyleSheet, View } from "react-native";
 import { CarouselItem, CarouselItemProps } from "./CarouselItem";
-import { FlatList, StyleSheet } from "react-native";
+import { Skeleton, Text} from "@rneui/base";
 
-export const Carousel: FunctionComponent<CarouselItemProps[]> = (data) => {
-    return  <FlatList
+export const Carousel: FunctionComponent<{items: CarouselItemProps[], title: string, subtitle: string}> = ({items, title, subtitle}) => {
+    return (
+    <View>
+    <Text h3>{title}</Text>
+    <Text>{subtitle}</Text>
+    <FlatList
     contentContainerStyle={styles.container}
-        data={data}
+        data={items}
         renderItem={({item}) => {
             return <CarouselItem
             key={item.uid}
@@ -22,6 +27,7 @@ export const Carousel: FunctionComponent<CarouselItemProps[]> = (data) => {
         keyExtractor={item => item.uid}
         showsHorizontalScrollIndicator={false}
         />
+        </View>)
 }
 
 
@@ -29,7 +35,7 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
-        gap: 20
+        gap: 20,
+        padding: 3
     }
-
 })
