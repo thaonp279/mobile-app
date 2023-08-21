@@ -2,7 +2,6 @@ import * as prismic from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react/dist/react-server/PrismicRichText";
 import { Text } from "@rneui/base";
 import { TextProps } from "react-native";
-import { GlobalStyle, GlobalText } from "../../constants/GlobalStyle";
 import { RichImage } from "./RichImage";
 
 export function RichText(props: { field: prismic.RichTextField } & TextProps) {
@@ -35,9 +34,25 @@ export function RichText(props: { field: prismic.RichTextField } & TextProps) {
         strong: ({ children }) => (
           <Text style={{ fontWeight: "bold" }}>{children}</Text>
         ),
-        paragraph: ({ children }) => <Text {...rest} style={GlobalText.regular}>{children}</Text>,
+        paragraph: ({ children }) => (
+          <Text
+            {...rest}
+            style={{ fontFamily: "Montserrat_400Regular", fontSize: 13 }}
+          >
+            {children}
+          </Text>
+        ),
         image: (data) => {
-          return <RichImage field={data.node} style={GlobalStyle.blogImage} />;
+          return (
+            <RichImage
+              field={data.node}
+              style={{
+                width: "100%",
+                height: 200,
+                objectFit: "contain",
+              }}
+            />
+          );
         },
       }}
     />

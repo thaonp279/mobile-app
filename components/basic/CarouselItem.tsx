@@ -1,7 +1,6 @@
 import { Href, Link } from "expo-router";
 import { FunctionComponent } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { GlobalStyle, GlobalText } from "../../constants/GlobalStyle";
 
 export type CarouselItemProps = {
   cardType: string;
@@ -23,20 +22,20 @@ export const CarouselItem: FunctionComponent<CarouselItemProps> = ({
   uid,
 }) => {
   return (
-    <View style={[styles.card, GlobalStyle.shadow]}>
+    <View style={styles.card}>
       <View style={styles.thumbnail}>
         <Image source={{ uri: imageUrl }} style={styles.image} />
         <View style={styles.titleBox}>
           <Text style={styles.title}>{title}</Text>
-          <Text style={[GlobalText.tiny, styles.tag]}>{cardType}</Text>
+          <Text style={[styles.tiny, styles.tag]}>{cardType}</Text>
         </View>
       </View>
       <View style={styles.content}>
         <View>
-          <Text style={[GlobalText.tiny, GlobalText.bold]}>
+          <Text style={[styles.tiny, styles.bold]}>
             Shown to you because of:
           </Text>
-          <Text style={GlobalText.tiny}>{`\u2022 ${reasons}`}</Text>
+          <Text style={styles.tiny}>{`\u2022 ${reasons}`}</Text>
         </View>
         <Link
           href={{
@@ -60,6 +59,11 @@ const styles = StyleSheet.create({
     width: 200,
     borderRadius: 10,
     backgroundColor: "white",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
   },
   thumbnail: {
     height: 150,
@@ -101,5 +105,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 12,
+  },
+  tiny: {
+    fontFamily: "Montserrat_400Regular",
+    fontSize: 11,
+  },
+  bold: {
+    fontFamily: "Montserrat_700Bold",
   },
 });

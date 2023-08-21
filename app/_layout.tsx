@@ -73,7 +73,7 @@ function RootLayoutNav() {
         screenOptions={{
           headerStyle: { backgroundColor: "white" },
           headerBackTitle: "",
-          headerTitle: (props) => <Logo />,
+          headerTitle: (_) => <Logo />,
           headerBackTitleVisible: false,
           headerTintColor: "grey",
         }}

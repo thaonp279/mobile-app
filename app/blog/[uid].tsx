@@ -5,7 +5,6 @@ import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { RichImage } from "../../components/basic/RichImage";
 import { RichText } from "../../components/basic/RichText";
-import { GlobalStyle } from "../../constants/GlobalStyle";
 
 const styles = StyleSheet.create({
   image: {
@@ -14,7 +13,6 @@ const styles = StyleSheet.create({
     objectFit: "cover",
     borderRadius: 10,
   },
-  scrollView: {},
 });
 export default function BlogPost() {
   const { uid } = useLocalSearchParams();
@@ -28,7 +26,10 @@ export default function BlogPost() {
   }
 
   return (
-    <ScrollView contentContainerStyle={{ ...GlobalStyle.page }} style={{backgroundColor: 'white'}}>
+    <ScrollView
+      contentContainerStyle={{ padding: 25 }}
+      style={{ backgroundColor: "white" }}
+    >
       <RichImage field={document?.data.blog_image} style={styles.image} />
       <RichText field={document?.data.blog_title} />
       <RichText field={document?.data.estimated_time} />

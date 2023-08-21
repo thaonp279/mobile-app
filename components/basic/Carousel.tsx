@@ -1,7 +1,6 @@
 import { Text } from "@rneui/base";
 import { FunctionComponent } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import { GlobalText } from "../../constants/GlobalStyle";
 import { CarouselItem, CarouselItemProps } from "./CarouselItem";
 
 export const Carousel: FunctionComponent<{
@@ -11,8 +10,10 @@ export const Carousel: FunctionComponent<{
 }> = ({ items, title, subtitle }) => {
   return (
     <View>
-      <Text h3 h3Style={GlobalText.h3}>{title}</Text>
-      <Text style={GlobalText.regular}>{subtitle}</Text>
+      <Text h3 h3Style={styles.h3}>
+        {title}
+      </Text>
+      <Text style={styles.regular}>{subtitle}</Text>
       <FlatList
         contentContainerStyle={styles.container}
         data={items}
@@ -44,5 +45,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 20,
     padding: 3,
+  },
+  h3: {
+    fontSize: 30,
+    fontFamily: "CrimsonPro_200ExtraLight",
+  },
+  regular: {
+    fontFamily: "Montserrat_400Regular",
+    fontSize: 13,
   },
 });
