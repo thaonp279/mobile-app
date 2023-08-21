@@ -1,7 +1,7 @@
 import { Href, Link } from "expo-router";
 import { FunctionComponent } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { GlobalStyle } from "../constants/GlobalStyle";
+import { GlobalStyle } from "../../constants/GlobalStyle";
 
 export type CarouselItemProps = {
     cardType: string;
