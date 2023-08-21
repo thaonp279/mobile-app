@@ -1,11 +1,11 @@
 import { usePrismicDocumentByUID } from "@prismicio/react";
 import { Skeleton } from "@rneui/base";
 import { useLocalSearchParams } from "expo-router";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { GlobalStyle } from "../../constants/GlobalStyle";
 import { RichImage } from "../../components/basic/RichImage";
 import { RichText } from "../../components/basic/RichText";
+import { GlobalStyle } from "../../constants/GlobalStyle";
 
 const styles = StyleSheet.create({
   image: {
@@ -20,7 +20,7 @@ export default function BlogPost() {
   const { uid } = useLocalSearchParams();
   const [document, { state }] = usePrismicDocumentByUID(
     "blog_post",
-    uid as string,
+    uid as string
   );
 
   if (state === "loading") {

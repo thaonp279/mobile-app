@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useColorScheme } from "react-native";
 import "react-native-url-polyfill/auto";
 import { client } from "../prismic";
+import { Logo } from "../components/app/Logo";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -58,7 +59,15 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack></Stack>
+      <Stack
+        screenOptions={{
+          headerStyle: { backgroundColor: "white" },
+          headerBackTitle: '',
+          headerTitle: (props) => <Logo />,
+          headerBackTitleVisible: false,
+          headerTintColor: 'black',
+        }}
+      ></Stack>
     </ThemeProvider>
   );
 }
