@@ -4,24 +4,20 @@ import { ProductCarousel } from "../components/app/ProductCarousel";
 import { GlobalStyle } from "../constants/GlobalStyle";
 
 const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 30
-    }
-
-})
-
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 30,
+  },
+});
 
 export default function Home() {
-
-    return (
-        <ScrollView>
-        <View style={[GlobalStyle.page, styles.container]}>
-            <BlogCarousel />
-            <ProductCarousel />
-        </View>
-        </ScrollView>
-
-    )
+  return (
+    <ScrollView>
+      <View style={[GlobalStyle.page, styles.container]}>
+        <BlogCarousel />
+        <ProductCarousel />
+      </View>
+    </ScrollView>
+  );
 }
