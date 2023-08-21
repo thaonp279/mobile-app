@@ -23,32 +23,34 @@ export const CarouselItem: FunctionComponent<CarouselItemProps> = ({
 }) => {
   return (
     <View style={styles.card}>
-      <View style={styles.thumbnail}>
-        <Image source={{ uri: imageUrl }} style={styles.image} />
-        <View style={styles.titleBox}>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={[styles.tiny, styles.tag]}>{cardType}</Text>
-        </View>
-      </View>
-      <View style={styles.content}>
-        <View>
-          <Text style={[styles.tiny, styles.bold]}>
-            Shown to you because of:
-          </Text>
-          <Text style={styles.tiny}>{`\u2022 ${reasons}`}</Text>
-        </View>
-        <Link
-          href={{
-            pathname: path,
-            params: { uid },
-          }}
-          asChild
-        >
-          <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>{cta}</Text>
-          </Pressable>
-        </Link>
-      </View>
+      <Link
+        href={{
+          pathname: path,
+          params: { uid },
+        }}
+        asChild
+      >
+        <Pressable>
+          <View style={styles.thumbnail}>
+            <Image source={{ uri: imageUrl }} style={styles.image} />
+            <View style={styles.titleBox}>
+              <Text style={styles.title}>{title}</Text>
+              <Text style={[styles.tiny, styles.tag]}>{cardType}</Text>
+            </View>
+          </View>
+          <View style={styles.content}>
+            <View>
+              <Text style={[styles.tiny, styles.bold]}>
+                Shown to you because of:
+              </Text>
+              <Text style={styles.tiny}>{`\u2022 ${reasons}`}</Text>
+            </View>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>{cta}</Text>
+            </View>
+          </View>
+        </Pressable>
+      </Link>
     </View>
   );
 };
