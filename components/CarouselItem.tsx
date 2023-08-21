@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { GlobalStyle } from "../constants/GlobalStyle";
 
-type PreviewCardProps = {
+export type CarouselItemProps = {
     cardType: string;
     imageUrl: string;
     title: string;
@@ -13,7 +13,7 @@ type PreviewCardProps = {
     uid: string;
 }
 
-export const PreviewCard: FunctionComponent<PreviewCardProps> = ({
+export const CarouselItem: FunctionComponent<CarouselItemProps> = ({
     imageUrl, title, reasons, cta, path, cardType, uid
 }) => {
     return (

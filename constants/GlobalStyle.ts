@@ -5,7 +5,7 @@ export const GlobalStyle = StyleSheet.create({
     },
     page: {
         backgroundColor: 'white',
-        padding: 25
+        padding: 25,
     },
     shadow: {
         shadowColor: '#000',
