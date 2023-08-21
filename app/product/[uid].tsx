@@ -1,10 +1,10 @@
 import { usePrismicDocumentByUID } from "@prismicio/react";
-import { Skeleton } from "@rneui/base";
 import { Link, useLocalSearchParams } from "expo-router";
 import { Pressable, StyleSheet, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { RichImage } from "../../components/basic/RichImage";
 import { RichText } from "../../components/basic/RichText";
+import { Skeleton } from "../../components/app/Skeleton";
 
 const styles = StyleSheet.create({
   image: {
